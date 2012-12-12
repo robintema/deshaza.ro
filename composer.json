@@ -1,0 +1,17 @@
+{
+    "name": "deshaza.ro",
+    "description": "A wordpress site",
+    "license": "BSD-3-Clause",
+    "minimum-stability": "dev",
+    "keywords": [
+        "wordpress"
+    ],
+    "homepage": "http://deshaza.ro/",
+    "require": {
+        "php": ">=5.3.3",
+        "behat/behat": "2.4@stable",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver": "*"
+    }
+}

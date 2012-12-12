@@ -1,0 +1,35 @@
+default:
+  context:
+    class: 'DefaultFeatureContext'
+    parameters:
+      database:
+          username: 'postgres'
+          password: 'Dnstuff12345'
+          dbname: 'oligopoly_new'
+          host: '192.168.88.76'
+          port: 5432
+          driver: 'pdo_pgsql'
+      RestAPI:
+        base_url: 'http://192.168.88.76/oligopoly_new/api/'
+        fbtoken: 'AAAHQ7R9foBwBADImCUBEeZBuj0UzXlOogZBwFB4HP4NlvkLRi5mPRJJMnElUwF2tyZBELyADUtF4iF8vncqeDNaioskDisDSXrG2mr2Sl0s3VhBBYBp'
+        duelSalt: '8302a572c2c9fcc45c7f448015bdad6c'
+      emailLog:
+        path: 'tmp/oligopoly_emails/'
+
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url:  'http://192.168.88.76/oligopoly_new/public/'
+      goutte:    ~
+      selenium2: ~
+
+# No context:
+no_context:
+  paths:
+    bootstrap: 'NON_EXISTING_FOLDER'
+  filters:
+    tags:      '~@javascript'
+
+# Context based on inheritance:
+inheritance:
+  context:
+    class:      'InheritedFeatureContext'
